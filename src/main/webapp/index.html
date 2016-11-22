@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="MomondoApp">
+    <head>
+        <title>Momondo service</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+              rel="stylesheet" 
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+              crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/>
+    </head>
+    <body ng-controller="SearchCtrl">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Search engine</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>                
+            </nav>
+            <div id="searchBar">
+                <input type="text" placeholder="Start Destination (ex: HEL)" id="startPlace" ng-bind="startPlace">
+                <input type="text" placeholder="End destination (ex: CPH)" id="endPlace" ng-bind="endPlace">
+                <input type="date" id="startDate" ng-bind="startDate">
+                <input type="date" id="endDate" ng-bind="endDate">
+
+                <button id="seachButton">Search</button>
+            </div>
+            <div class="container">
+                <p>
+                    This is where we will get our search results then in a list
+                    format
+                </p>
+                <ul>
+                <li>
+                    EXAMPLE TEXT
+                </li>
+                <li>
+                    EXAMPLE TEXT
+                </li>
+                <li>
+                    EXAMPLE TEXT
+                </li>
+                <li>
+                    EXAMPLE TEXT
+                </li>
+                <li>
+                    EXAMPLE TEXT
+                </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
