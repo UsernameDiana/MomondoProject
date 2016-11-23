@@ -23,10 +23,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "flights")
 @NamedQueries({
-@NamedQuery(name="flights.findWithAll", query="SELECT f FROM Flights f WHERE f.date = :date AND f.origin = :origin AND f.destination = :destination"),
-@NamedQuery(name="flights.findWithTwo", query="SELECT f.origin FROM Flights f WHERE f.origin = " +  "CPH" + " AND f.destination =" + "RIX"),
-@NamedQuery(name="flights.findWithDate", query="SELECT f FROM Flights f WHERE f.date = :date"),
-@NamedQuery(name="flights.findWithOrigin", query="SELECT f FROM Flights f WHERE f.origin = :origin")
+@NamedQuery(name="Flights.findWithAll", query="SELECT f FROM Flights f WHERE f.date = :date AND f.origin = :origin AND f.destination = :destination"),
+@NamedQuery(name="Flights.findWithTwo", query="SELECT f.origin, f.destination, f.flightId FROM Flights f WHERE f.origin = :origin AND f.destination = :destination"),
+@NamedQuery(name="Flights.findWithDate", query="SELECT f FROM Flights f WHERE f.date = :date"),
+@NamedQuery(name="Flights.findWithOrigin", query="SELECT f FROM Flights f WHERE f.origin = :origin")
 })
 public class Flights implements Serializable {
 

@@ -38,9 +38,11 @@ public class FlightsFacade implements IFlights {
     public List<Flights> getWithAll(String origin, String dest, Date date) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createNamedQuery("Flights.findWithAll", Flights.class)
+            Query query = /*em.createNamedQuery("Flights.findWithAll", Flights.class)
                     .setParameter("f.origin", origin).setParameter("destination", dest)
-                    .setParameter("f.date", date);
+                    .setParameter("f.date", date);*/
+                    em.createQuery("SELECT f FROM Flights f WHERE f.origin = '" 
+                            + origin + "'" + "AND f.destination = '" + dest + "'" + "AND f.date = '" + date + "'");
             List<Flights> f = query.getResultList();
             return f;
         } finally {
@@ -53,9 +55,10 @@ public class FlightsFacade implements IFlights {
     public List<Flights> getWithTwo(String origin, String dest) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createNamedQuery("SELECT f FROM Flights f WHERE f.origin = '" 
-                    + origin + "'" + " AND f.destination = '" + dest + "'", Flights.class)
-                    ;
+            Query query = /*em.createNamedQuery("Flights.findWithTwo", Flights.class)
+                    .setParameter("f.origin", origin).setParameter("f.destination", dest);*/ 
+                    em.createQuery("SELECT f FROM Flights f WHERE f.origin = '" 
+                            + origin + "'" + "AND f.destination = '" + dest + "'");
             List<Flights> f = query.getResultList();
             return f;
         } finally {

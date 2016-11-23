@@ -38,17 +38,7 @@ public class FlightsFacadeTest {
     
     @Before
     public void setUp() {
-        EntityManager em = emf.createEntityManager();
-        Date date = new Date(2016-03-05);
-        try {
-        em.getTransaction().begin();
-        em.createQuery("delete from Flights").executeUpdate();
-        Flights f1 = new Flights("2257-1457179200000","COL2257", date,3,180,120,"CPH","CDG");
-        em.getTransaction().commit();
-        } 
-        finally {
-        em.close();
-        }
+        
     }
     
     @After
@@ -85,39 +75,39 @@ public class FlightsFacadeTest {
     @Test
     public void testGetWithTwo() {
         Date date = new Date(2016-03-05);
-     List<Flights> flights = facade.getWithAll("CPH", "CDG", date);
+     List<Flights> flights = facade.getWithTwo("CPH", "CDG");
      assertEquals(1, flights.size());
     }
 
     /**
      * Test of getWithDate method, of class FlightsFacade.
      */
-    @Test
-    public void testGetWithDate() {
-        System.out.println("getWithDate");
-        Date date = null;
-        FlightsFacade instance = null;
-        List<Flights> expResult = null;
-        List<Flights> result = instance.getWithDate(date);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getWithOrigin method, of class FlightsFacade.
-     */
-    @Test
-    public void testGetWithOrigin() {
-        System.out.println("getWithOrigin");
-        String origin = "";
-        Date date = null;
-        FlightsFacade instance = null;
-        List<Flights> expResult = null;
-        List<Flights> result = instance.getWithOrigin(origin, date);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testGetWithDate() {
+//        System.out.println("getWithDate");
+//        Date date = null;
+//        FlightsFacade instance = null;
+//        List<Flights> expResult = null;
+//        List<Flights> result = instance.getWithDate(date);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+//
+//    /**
+//     * Test of getWithOrigin method, of class FlightsFacade.
+//     */
+//    @Test
+//    public void testGetWithOrigin() {
+//        System.out.println("getWithOrigin");
+//        String origin = "";
+//        Date date = null;
+//        FlightsFacade instance = null;
+//        List<Flights> expResult = null;
+//        List<Flights> result = instance.getWithOrigin(origin, date);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     
 }
