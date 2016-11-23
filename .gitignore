@@ -9,6 +9,6 @@ buildNumber.properties
 .mvn/timing.properties
 nb-configuration.xml
 */META-INF/*
-*/*/ApplicationConfig.java
+src/main/java/rest/ApplicationConfig.java
 /nbproject/
 /src/main/resources/
