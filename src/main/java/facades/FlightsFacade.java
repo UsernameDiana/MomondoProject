@@ -53,8 +53,9 @@ public class FlightsFacade implements IFlights {
     public List<Flights> getWithTwo(String origin, String dest) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createNamedQuery("Flights.findWithTwo", Flights.class)
-                    .setParameter("f.origin", origin).setParameter("f.destination", dest);
+            Query query = em.createNamedQuery("SELECT f FROM Flights f WHERE f.origin = '" 
+                    + origin + "'" + " AND f.destination = '" + dest + "'", Flights.class)
+                    ;
             List<Flights> f = query.getResultList();
             return f;
         } finally {

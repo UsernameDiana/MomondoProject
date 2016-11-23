@@ -23,9 +23,9 @@ public class MakeTable {
         Date date3 = new Date(2016-11-11);
         Date date4 = new Date(2016-12-12);
         
-        Flights f = new Flights("2257-1457179200000","COL2257", (java.sql.Date) date,3,180,120,"CPH","CDG"); 
-        Flights f1 = new Flights("2257-1458179200000","COL2257", (java.sql.Date) date1,5,160,150,"CPH","HEL");
-        Flights f2 = new Flights("2257-1459179200000","COL2257", (java.sql.Date) date2,10,280,170,"CPH","AMST");
+        Flights f = new Flights("2257-1457179200000","COL2257", date,3,180,120,"CPH","CDG"); 
+        Flights f1 = new Flights("2257-1458179200000","COL2257", date1,5,160,150,"CPH","HEL");
+        Flights f2 = new Flights("2257-1459179200000","COL2257", date2,10,280,170,"CPH","AMST");
         Flights f3 = new Flights("2257-1451179200000","COL2257", (java.sql.Date) date3,7,680,110,"CPH","RIX");
         Flights f4 = new Flights("2257-1452179200000","COL2257", (java.sql.Date) date4,1,880,10,"CPH","ICN");
         EntityManager em = Persistence.createEntityManagerFactory("pu").createEntityManager();
