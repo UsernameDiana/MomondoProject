@@ -63,7 +63,7 @@ public class FlightsFacadeTest {
     @Test
     public void testGetWithAll() {
         String date = "2016-03-05";
-        List<Flights> flights = facade.getWithAll("CPH", "CDG", date);
+        List<Flights> flights = facade.getWithAll("CPH/GMT+1:00", "CDG/GMT1:00", date);
         assertEquals(1, flights.size());
     }
 
@@ -72,7 +72,7 @@ public class FlightsFacadeTest {
      */
     @Test
     public void testGetWithTwo() {
-        List<Flights> flights = facade.getWithTwo("CPH", "CDG");
+        List<Flights> flights = facade.getWithTwo("CPH/GMT+1:00", "CDG");
         assertEquals(1, flights.size());
     }
 
@@ -91,7 +91,7 @@ public class FlightsFacadeTest {
 
     @Test
     public void testGetWithOrigin() {
-        List<Flights> flights = facade.getWithOrigin("CPH", "2016-03-05");
+        List<Flights> flights = facade.getWithOrigin("CPH/GMT+1:00", "2016-03-05");
         assertEquals(1, flights.size());
     }
 
