@@ -50,7 +50,7 @@ public class Resource {
      * @return an instance of java.lang.String
      */
     @GET
-    @Path("twoparameters/{origin}/{destination}")
+    @Path("/{origin},{destination}")
     @Produces(MediaType.APPLICATION_JSON)
     public String getAllFlightsTwoParams(@PathParam("origin") String origin, 
             @PathParam("destination") String destination) {
@@ -60,7 +60,7 @@ public class Resource {
         return gson.toJson(f);
     }
     @GET
-    @Path("allparameters/{origin}/{destination}/{date}")
+    @Path("/{origin},{destination},{date}")
     @Produces(MediaType.APPLICATION_JSON)
     public String getAllFlightsAllParams(@PathParam("origin") String origin,
             @PathParam("destination") String dest, @PathParam("date") Date date) {
