@@ -69,8 +69,7 @@ public class FlightsFacade implements IFlights {
     public List<Flights> getWithDate(String date) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createNamedQuery("Flights.findWithDate", Flights.class)
-                    .setParameter("f.date", date);
+            Query query = em.createQuery("SELECT f FROM Flights f WHERE f.date = '" + date + "'");
             List<Flights> f = query.getResultList();
             return f;
         } finally {
@@ -82,13 +81,18 @@ public class FlightsFacade implements IFlights {
     public List<Flights> getWithOrigin(String origin, String date) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createNamedQuery("Flights.findWithOrigin", Flights.class)
-                    .setParameter("f.origin", origin);
+            Query query = em.createQuery("SELECT f FROM Flights f WHERE f.origin = '" 
+                    + origin + "'" + "AND f.date = '" + date + "'");
             List<Flights> f = query.getResultList();
             return f;
         } finally {
             em.close();
         }
     }
+
+//    @Override
+//    public List<Flights> getAll() {
+//    
+//    }
 
 }

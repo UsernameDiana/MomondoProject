@@ -33,7 +33,7 @@ public class Resource {
 
     static IFlights facade = new FlightsFacade(Persistence.createEntityManagerFactory("pu"));
     static Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    
+    private final String airline = "Group C6 Airline";
     @Context
     private UriInfo context;
 
@@ -57,7 +57,7 @@ public class Resource {
         
         List<Flights> f = facade.getWithTwo(origin, destination);
         
-        return gson.toJson(f);
+        return gson.toJson(airline + f);
     }
     @GET
     @Path("/{origin},{destination},{date}")
@@ -67,18 +67,19 @@ public class Resource {
         List<Flights> f = facade.getWithAll(origin, dest, date);
         return gson.toJson(f);
     }
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getAllFlights() {
-        return null;
-    }
+//    @GET
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String getAllFlights() {
+//        
+//        return null;
+//    }
 
     /**
      * PUT method for updating or creating an instance of Resource
      * @param content representation for the resource
      */
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void putXml(String content) {
-    }
+//    @PUT
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public void putXml(String content) {
+//    }
 }

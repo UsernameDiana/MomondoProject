@@ -21,4 +21,5 @@ public interface IFlights {
     public List<Flights> getWithTwo(String origin, String dest);
     public List<Flights> getWithDate(String date);
     public List<Flights> getWithOrigin(String origin, String date);
+//    public List<Flights> getAll();
 }

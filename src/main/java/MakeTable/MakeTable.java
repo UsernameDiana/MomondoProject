@@ -6,7 +6,6 @@
 package MakeTable;
 
 import entities.Flights;
-import java.sql.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
@@ -23,11 +22,11 @@ public class MakeTable {
 //        Date date3 = new Date(2016-11-11);
 //        Date date4 = new Date(2016-12-12);
         
-        Flights f = new Flights("2257-1457179200000","COL2257", "2016-03-05",3,180,120,"CPH","CDG"); 
-        Flights f1 = new Flights("2257-1458179200000","COL2257", "2016-05-03",5,160,150,"CPH","HEL");
-        Flights f2 = new Flights("2257-1459179200000","COL2257", "2016-07-02",10,280,170,"CPH","AMST");
-        Flights f3 = new Flights("2257-1451179200000","COL2257", "2016-11-11",7,680,110,"CPH","RIX");
-        Flights f4 = new Flights("2257-1452179200000","COL2257", "2016-12-12",1,880,10,"CPH","ICN");
+        Flights f = new Flights("2257-1457179200000","COL2257", "2016-03-05",16,180,120,"CPH/GMT+1:00","CDG/GMT1:00"); 
+        Flights f1 = new Flights("2257-1458179200000","COL2257", "2016-05-03",20,160,150,"CPH/GMT+1:00","HEL/GMT:2:00");
+        Flights f2 = new Flights("2257-1459179200000","COL2257", "2016-07-02",50,280,170,"CPH/GMT+1:00","AMS/GMT1:00");
+        Flights f3 = new Flights("2257-1451179200000","COL2257", "2016-11-11",70,680,110,"CPH/GMT+1:00","RIX/GMT2:00");
+        Flights f4 = new Flights("2257-1452179200000","COL2257", "2016-12-12",100,880,10,"CPH/GMT+1:00","ICN/GMT9:00");
         EntityManager em = Persistence.createEntityManagerFactory("pu").createEntityManager();
         em.getTransaction().begin();
         em.persist(f);
