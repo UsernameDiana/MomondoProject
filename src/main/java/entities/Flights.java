@@ -37,7 +37,7 @@ public class Flights implements Serializable {
     @Column(name = "flightNumber")
     private String flightNumber;
     @Column(name = "date")
-    private Date date;
+    private String date;
     @Column(name = "numberOfSeats")
     private int numberOfSeats;
     @Column(name = "totalPrice")
@@ -56,7 +56,7 @@ public class Flights implements Serializable {
     public Flights() {
     }
 
-    public Flights(String flightId, String flightNumber, Date date, 
+    public Flights(String flightId, String flightNumber, String date, 
             int numberOfSeats, Number totalPrice, int travelTime, String origin,
             String destination) {
         this.flightId = flightId;
@@ -73,11 +73,11 @@ public class Flights implements Serializable {
         this.flightNumber = flightNumber;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

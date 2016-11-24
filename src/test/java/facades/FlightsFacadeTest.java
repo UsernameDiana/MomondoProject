@@ -64,7 +64,7 @@ public class FlightsFacadeTest {
      */
     @Test
     public void testGetWithAll() {
-        Date date = new Date(2016-03-05);
+        String date = "2016-03-05";
      List<Flights> flights = facade.getWithAll("CPH", "CDG", date);
      assertEquals(1, flights.size());
     }
@@ -74,7 +74,6 @@ public class FlightsFacadeTest {
      */
     @Test
     public void testGetWithTwo() {
-        Date date = new Date(2016-03-05);
      List<Flights> flights = facade.getWithTwo("CPH", "CDG");
      assertEquals(1, flights.size());
     }

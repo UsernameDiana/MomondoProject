@@ -17,8 +17,8 @@ import javax.persistence.EntityManagerFactory;
 public interface IFlights {
     
     void addEntityManagerFactory(EntityManagerFactory emf);
-    public List<Flights> getWithAll(String origin, String dest, Date date);
+    public List<Flights> getWithAll(String origin, String dest, String date);
     public List<Flights> getWithTwo(String origin, String dest);
-    public List<Flights> getWithDate(Date date);
-    public List<Flights> getWithOrigin(String origin, Date date);
+    public List<Flights> getWithDate(String date);
+    public List<Flights> getWithOrigin(String origin, String date);
 }

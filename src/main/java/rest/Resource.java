@@ -63,7 +63,7 @@ public class Resource {
     @Path("/{origin},{destination},{date}")
     @Produces(MediaType.APPLICATION_JSON)
     public String getAllFlightsAllParams(@PathParam("origin") String origin,
-            @PathParam("destination") String dest, @PathParam("date") Date date) {
+            @PathParam("destination") String dest, @PathParam("date") String date) {
         List<Flights> f = facade.getWithAll(origin, dest, date);
         return gson.toJson(f);
     }

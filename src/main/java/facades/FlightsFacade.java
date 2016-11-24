@@ -6,13 +6,12 @@
 package facades;
 
 import entities.Flights;
-import java.sql.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import javax.persistence.Persistence;
 /**
  *
  * @author jarmo
@@ -35,7 +34,7 @@ public class FlightsFacade implements IFlights {
     }
 
     @Override
-    public List<Flights> getWithAll(String origin, String dest, Date date) {
+    public List<Flights> getWithAll(String origin, String dest, String date) {
         EntityManager em = getEntityManager();
         try {
             Query query = /*em.createNamedQuery("Flights.findWithAll", Flights.class)
@@ -67,7 +66,7 @@ public class FlightsFacade implements IFlights {
     }
 
     @Override
-    public List<Flights> getWithDate(Date date) {
+    public List<Flights> getWithDate(String date) {
         EntityManager em = getEntityManager();
         try {
             Query query = em.createNamedQuery("Flights.findWithDate", Flights.class)
@@ -80,7 +79,7 @@ public class FlightsFacade implements IFlights {
     }
 
     @Override
-    public List<Flights> getWithOrigin(String origin, Date date) {
+    public List<Flights> getWithOrigin(String origin, String date) {
         EntityManager em = getEntityManager();
         try {
             Query query = em.createNamedQuery("Flights.findWithOrigin", Flights.class)
