@@ -57,7 +57,7 @@ public class Resource {
         
         List<Flights> f = facade.getWithTwo(origin, destination);
         
-        return gson.toJson(airline + f);
+        return gson.toJson(f);
     }
     @GET
     @Path("/{origin},{destination},{date}")
