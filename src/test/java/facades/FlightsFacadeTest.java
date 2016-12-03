@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package facades;
 
 import entities.Flights;
@@ -59,14 +54,15 @@ public class FlightsFacadeTest {
     }*/
     /**
      * Test of getWithAll method, of class FlightsFacade.
-     */
+     
     @Test
     public void testGetWithAll() {
-        String date = "2016-03-05T09:00:00.000Z";
-        List<Flights> flights = facade.getWithAll("CPH", "CDG", date);
+        String date = "2016-11-11T06:50:00.000Z"; 
+        String tickets = "70";
+        List<Flights> flights = facade.getWithAll("CPH", "RIX", date, tickets);
         assertEquals(1, flights.size());
     }
-
+*/
     /**
      * Test of getWithTwo method, of class FlightsFacade.
      */
