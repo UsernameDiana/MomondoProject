@@ -1,6 +1,8 @@
 package facades;
 
 import entities.Flights;
+import java.io.IOException;
+import java.net.ProtocolException;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 

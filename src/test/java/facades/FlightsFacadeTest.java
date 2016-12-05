@@ -53,22 +53,22 @@ public class FlightsFacadeTest {
         fail("The test case is a prototype.");
     }*/
     /**
-     * Test of getWithAll method, of class FlightsFacade.
+     * Test of getWithAll method, of class FlightsFacade.*/
    
     @Test
     public void testGetWithAll() {
         String date = "2016-11-11T06:50:00.000Z"; 
         List<Flights> flights = facade.getWithAll("CPH", "RIX", date, 2);
         assertEquals(1, flights.size());
-    }*/
-  /*
+    }
+  
     @Test
     public void testGetWithThree(){
         String date = "2016-11-11T06:50:00.000Z"; 
         List<Flights> flights = facade.getWithThree("CPH", date, 2);
         assertEquals(1, flights.size());
     }
-    */
+    
     /**
      * Test of getWithTwo method, of class FlightsFacade.
      */
