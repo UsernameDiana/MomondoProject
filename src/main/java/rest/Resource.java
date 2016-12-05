@@ -35,11 +35,11 @@ public class Resource {
     }
 
     @GET
-    @Path("/{origin}/{date}/{tickits}")
+    @Path("/{origin}/{date}/{tickets}")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getAllFromDateTickits(@PathParam("origin") String origin, 
-            @PathParam("date") String date, @PathParam("tickits") String tickets) {
-        
+    public String getAllFromDateTickets(@PathParam("origin") String origin, 
+            @PathParam("date") String date, @PathParam("tickets") int tickets) {
+       
         List<Flights> f = facade.getWithThree(origin, date, tickets);
         System.out.println("GET WITH TWO PARAMS" + f);
         return gson.toJson(f);
@@ -50,7 +50,8 @@ public class Resource {
     @Produces(MediaType.APPLICATION_JSON)
     public String getAllFlightsAllParams(@PathParam("origin") String origin,
             @PathParam("destination") String dest, @PathParam("date") String date, @PathParam("tickets") String tickets) {
-        List<Flights> f = facade.getWithAll(origin, dest, date, tickets);
+        int t = Integer.parseInt(tickets);
+        List<Flights> f = facade.getWithAll(origin, dest, date, t);
         return gson.toJson(f);
     }
     
@@ -66,7 +67,6 @@ public class Resource {
             @PathParam("destination") String destination) {
         
         List<Flights> f = facade.getWithTwo(origin, destination);
-        System.out.println("GET WITH TWO PARAMS" + f);
         return gson.toJson(f);
     }
 }

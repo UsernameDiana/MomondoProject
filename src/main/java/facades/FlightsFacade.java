@@ -28,12 +28,16 @@ public class FlightsFacade implements IFlights {
     }
 
     @Override // from / date / ticets
-    public List<Flights> getWithThree(String origin, String date, String tickets){
+    public List<Flights> getWithThree(String origin, String date, int tickets){
+         System.out.println("GET WITH THREEE YOU SUCK ");
         EntityManager em = getEntityManager();
+         System.out.println("GET WITH THREEE YOU SUCK ");
         try{
              Query query = em.createQuery("SELECT f FROM Flights f WHERE f.origin = '" 
-                            + origin + "'" + "AND f.date = '" + date + "'" + "AND f.tickets = '" + tickets + "'");
+                            + origin + "'" + "AND f.date = '" + date + "'" + "AND f.numberOfSeats >= '" + tickets + "'");
             List<Flights> f = query.getResultList();
+            System.out.println("BLABLABLABLABLABLA");
+           // System.out.println(f.get(tickets)+ "bLABLABLABLA");
             return f;
         }
         finally{}
@@ -41,14 +45,17 @@ public class FlightsFacade implements IFlights {
     }
     
     @Override  // from / to / date / tickets
-    public List<Flights> getWithAll(String origin, String dest, String date, String tickets) {
+    public List<Flights> getWithAll(String origin, String dest, String date, int tickets) {
+        System.out.println("GETTING WITH ALL PARAMS");
         EntityManager em = getEntityManager();
+         System.out.println("GETTING WITH ALL PARAMS");
         try {
             Query query = /*em.createNamedQuery("Flights.findWithAll", Flights.class)
                     .setParameter("f.origin", origin).setParameter("destination", dest)
                     .setParameter("f.date", date);*/
             em.createQuery("SELECT f FROM Flights f WHERE f.origin = '"+ origin +"'"+"AND f.destination ='"
-                    + dest + "'" + "AND f.date ='"+ date + "AND f.numberOfSeats ='" + tickets + "'");
+                    + dest + "'" + "AND f.date ='"+ date + "AND f.numberOfSeats >='" + tickets + "'");
+            
             List<Flights> f = query.getResultList();
             System.out.println(f + "GET WITH ALL");
             return f;
@@ -61,6 +68,7 @@ public class FlightsFacade implements IFlights {
     @Override
     public List<Flights> getWithTwo(String origin, String dest) {
         EntityManager em = getEntityManager();
+        System.out.println("GET WITH ORIGIN DESTINATION");
         try {
             Query query = /*em.createNamedQuery("Flights.findWithTwo", Flights.class)
                     .setParameter("f.origin", origin).setParameter("f.destination", dest);*/ 
@@ -76,6 +84,7 @@ public class FlightsFacade implements IFlights {
     @Override
     public List<Flights> getWithDate(String date) {
         EntityManager em = getEntityManager();
+         System.out.println("GET WITH DATE");
         try {
             Query query = em.createQuery("SELECT f FROM Flights f WHERE f.date = '" + date + "'");
             List<Flights> f = query.getResultList();
@@ -89,6 +98,7 @@ public class FlightsFacade implements IFlights {
     @Override
     public List<Flights> getWithOrigin(String origin, String date) {
         EntityManager em = getEntityManager();
+        System.out.println("GET WITH ORIGIN DATE");
         try {
             Query query = em.createQuery("SELECT f FROM Flights f WHERE f.origin = '" 
                     + origin + "'" + "AND f.date = '" + date + "'");

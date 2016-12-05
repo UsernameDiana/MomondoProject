@@ -54,22 +54,28 @@ public class FlightsFacadeTest {
     }*/
     /**
      * Test of getWithAll method, of class FlightsFacade.
-     
+   
     @Test
     public void testGetWithAll() {
         String date = "2016-11-11T06:50:00.000Z"; 
-        String tickets = "70";
-        List<Flights> flights = facade.getWithAll("CPH", "RIX", date, tickets);
+        List<Flights> flights = facade.getWithAll("CPH", "RIX", date, 2);
+        assertEquals(1, flights.size());
+    }*/
+  /*
+    @Test
+    public void testGetWithThree(){
+        String date = "2016-11-11T06:50:00.000Z"; 
+        List<Flights> flights = facade.getWithThree("CPH", date, 2);
         assertEquals(1, flights.size());
     }
-*/
+    */
     /**
      * Test of getWithTwo method, of class FlightsFacade.
      */
     @Test
     public void testGetWithTwo() {
         List<Flights> flights = facade.getWithTwo("CPH", "CDG");
-        assertEquals(1, flights.size());
+        assertEquals(1, flights.size());  // returns the number of elements in this list
     }
 
     /**
