@@ -1,0 +1,126 @@
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid green;
+}
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.topnav {
+    font-size: 14px; 
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../images/outsourceplane.jpeg) no-repeat center center;
+    background-size: cover;
+    height: 660px;
+}
+
+
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+/*Search Elements*/
+
+.destination{
+    height: 50px;
+    width: 80%;
+    padding-left: 10px;
+    color: gray;
+    border: none;
+    border-color: transparent;
+}
+
+.passangers{
+    height: 50px;
+    width: 80%;
+    padding-left: 10px;
+    color: gray;
+    border: none;
+    border-color: transparent;
+    margin-top: 10px;
+}
+
+.dates{
+    width: 39.7%;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 10px;
+    color: gray;
+    border: none;
+    border-color: transparent;
+}
+
+.destAndDate{
+    width: 48%;
+    float: left;
+    margin-left: 2%;
+   
+}
+
+.searchBtn{
+    width: 18%;
+    height: 50px;
+    margin-top: 50px;
+}
+
+.searchBox{
+    width: 90%;
+    margin: 0 auto;
+    position: absolute;
+    margin-top: 330px;
+}
+
+.unstyled::-webkit-inner-spin-button
+{
+    display: none;
+    -webkit-appearance: none;
+}
+
+/*END Search Elements*/

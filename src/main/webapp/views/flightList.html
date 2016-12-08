@@ -1,0 +1,14 @@
+<div ng-controller="SearchCtrl">
+    
+    <h1>Result:</h1>
+    <span ng-repeat="r in result" >
+        <br/>
+        <h3 ng-repeat="f in result.flights track by $index" style='margin: 5px; padding: 5px'>
+            From: {{f.origin}}, 
+            To: {{f.destination}}, 
+            Date: {{f.date| date:'yyyy-MM-dd HH:mm:ss Z'}}, 
+            Price: {{f.totalPrice}} 
+            <a href="#/info/{{$index}}">Details</a></h3>
+        <br/>
+    </span>
+</div>

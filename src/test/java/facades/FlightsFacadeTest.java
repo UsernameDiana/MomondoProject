@@ -1,6 +1,7 @@
 package facades;
 
 import entities.Flights;
+import java.io.IOException;
 import java.util.List;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -39,62 +40,32 @@ public class FlightsFacadeTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of addEntityManagerFactory method, of class FlightsFacade.
-     */
-    //@Test
-    /*
-    public void testAddEntityManagerFactory() {
-        System.out.println("addEntityManagerFactory");
-        EntityManagerFactory emf = null;
-        FlightsFacade instance = null;
-        instance.addEntityManagerFactory(emf);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-    /**
-     * Test of getWithAll method, of class FlightsFacade.*/
-   
-    @Test
-    public void testGetWithAll() {
-        String date = "2016-11-11T06:50:00.000Z"; 
-        List<Flights> flights = facade.getWithAll("CPH", "RIX", date, 2);
-        assertEquals(1, flights.size());
-    }
-  
     @Test
     public void testGetWithThree(){
         String date = "2016-11-11T06:50:00.000Z"; 
-        List<Flights> flights = facade.getWithThree("CPH", date, 2);
+        List<Flights> flights = facade.getWithThree("CPH", date, "2");
         assertEquals(1, flights.size());
     }
     
+     /**
+     * Test of getWithAll method, of class FlightsFacade.
+    */
+    @Test
+    public void testGetWithAll()throws IOException {
+        String date = "2016-12-12T19:10:00.000Z"; 
+        String origin ="CPH";
+        String dest ="ICN";
+        String tickets ="2"; 
+        List<Flights> flights = facade.getWithAll(origin, dest, date, tickets);
+        assertEquals(flights.size(), 1); 
+    }
+
     /**
      * Test of getWithTwo method, of class FlightsFacade.
      */
     @Test
     public void testGetWithTwo() {
-        List<Flights> flights = facade.getWithTwo("CPH", "CDG");
+        List<Flights> flights = facade.getWithTwo("CPH", "2016-05-03T02:00:00.000Z");
         assertEquals(1, flights.size());  // returns the number of elements in this list
     }
-
-    /**
-     * Test of getWithDate method, of class FlightsFacade.
-     */
-    @Test
-    public void testGetWithDate() {
-        List<Flights> flights = facade.getWithDate("2016-03-05T09:00:00.000Z");
-        assertEquals(1, flights.size());
-    }
-//
-//    /**
-//     * Test of getWithOrigin method, of class FlightsFacade.
-//     */
-
-    @Test
-    public void testGetWithOrigin() {
-        List<Flights> flights = facade.getWithOrigin("CPH", "2016-03-05T09:00:00.000Z");
-        assertEquals(1, flights.size());
-    }
-
 }
