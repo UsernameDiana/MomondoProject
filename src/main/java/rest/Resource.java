@@ -36,7 +36,6 @@ public class Resource {
 
     @GET
     @Path("/{origin}/{date}/{tickets}")
-    
     public String getWithThree(@PathParam("origin") String origin, 
             @PathParam("date") String date, @PathParam("tickets") String tickets) {
        
@@ -52,7 +51,6 @@ public class Resource {
             @PathParam("destination") String dest, @PathParam("date") String date , @PathParam("tickets") String tickets) throws IOException{
         
         List<Flights> f = facade.getWithAll(origin, dest, date, tickets );
-       
         System.out.println("REST GET WITH ALL");
         return airline + " " + flights + gson.toJson( f);
     }
